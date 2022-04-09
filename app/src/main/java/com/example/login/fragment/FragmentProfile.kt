@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.login.R
 import com.example.login.databinding.FragmentLoginBinding
 import com.example.login.databinding.FragmentProfileBinding
@@ -34,6 +35,11 @@ class FragmentProfile : Fragment() {
 
         dialogProfile()
         getDataFromSignUp();
+
+        dataBinding.btnSoutProfile.setOnClickListener {
+            val controller = findNavController()
+            controller.navigate(R.id.action_fragmentProfile_to_fragmentWelcome)
+        }
 
     }
 

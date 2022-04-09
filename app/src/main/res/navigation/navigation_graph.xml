@@ -75,7 +75,9 @@
             app:destination="@id/fragmentSignUp" />
         <action
             android:id="@+id/action_fragmentLogin_to_fragmentHomeScreen"
-            app:destination="@id/fragmentHomeScreen" />
+            app:destination="@id/fragmentHomeScreen"
+            app:popUpTo="@id/fragmentLogin"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/fragmentSignUp"
@@ -97,5 +99,10 @@
     <fragment
         android:id="@+id/fragmentProfile"
         android:name="com.example.login.fragment.FragmentProfile"
-        android:label="FragmentProfile" />
+        android:label="FragmentProfile" >
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentWelcome"
+            app:destination="@id/fragmentWelcome"/>
+    </fragment>
+
 </navigation>
